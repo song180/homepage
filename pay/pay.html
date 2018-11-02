@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+		<title>脑壳里都是你</title>
+		<script src="js/comm.js"></script>
+		<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+		<style>
+			body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section,img{
+			    margin: 0;
+			    padding: 0;
+			}
+			body{background-color: #f6f6f6;}
+			.content{margin: 0 auto;height: 8rem;width: 8rem;}
+			.content img{width: 8rem;}
+			.blur {-webkit-filter: blur(4px);filter: blur(10px);}
+		</style>
+	</head>
+	<body>
+		<div class="content" style="margin-top: 2rem;background-color: #0b0b13;background-image: url(images/back.jpg);background-repeat: no-repeat;background-size: 100% 100%;position: relative;">
+			<img src="images/tick.jpg" alt="" class="blur" id="touchArea">
+			<p class="time" style="color: #333;font-size: 1rem;text-align: center;color: yellow;position: absolute;top: 0.3rem;right: 0.5rem;"></p>
+		</div>
+		<p style="font-size: 0.6rem;padding: 1rem;text-align: center;color: #e62222;" class="p1">长按查看5秒，然后会销毁哦</p>
+		<script>
+			var timeOutEvent=0;
+			$(function(){
+				$("#touchArea").on({
+					touchstart: function(e){
+						timeOutEvent = setTimeout("longPress()",500);
+					 	e.preventDefault();
+					},
+					touchmove: function(){
+			            		clearTimeout(timeOutEvent); 
+					    	timeOutEvent = 0; 
+					},
+					touchend: function(){
+				   		clearTimeout(timeOutEvent);
+						if(timeOutEvent!=0){ 
+						    alert("你这是点击，不是长按"); 
+						} 
+						return false; 
+					}
+				})
+			});
+			 
+			 
+			function longPress(){ 
+			    timeOutEvent = 0; 
+			    $('#touchArea').removeClass("blur")
+			    var count = 5;
+			    $(".time").html(count)
+			    var timer = setInterval(function(){	
+			    	count--;
+					$(".time").html(count)
+					if(count==0){
+						$('.time,#touchArea,.p1').hide();
+					}
+			    },1000)
+			} 
+
+		
+		</script>	
+	</body>
+</html>
