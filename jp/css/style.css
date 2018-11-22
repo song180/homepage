@@ -1,0 +1,83 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ol,ul,form, pre,th,td,input,textarea,select{
+	margin:0;padding:0;
+}
+body{color: #000;font-family:arial,"宋体";}
+li{
+	list-style:none;
+}
+
+img{
+	border:none;
+}
+
+a{text-decoration:none;
+	border: none; -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;}
+ a img {  	
+ border:none;
+}
+a,input,button{ outline:none; }
+::-moz-focus-inner{border:0px;}
+
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.dn{display: none;}
+.cb{clear: both;}
+input{border: 0;}
+.psr{position: relative;}
+.mt65{margin-top:.65rem;}
+.mt4{margin-top: .4rem;}
+.mt5{margin-top: .5rem;}
+.mt55{margin-top: .55rem;}
+.ml4{margin-left: .4rem;}
+.ml65{margin-left:.65rem;}
+/****************清除浮动****************************/
+.cfx:before, .cfx:after { content: ""; display: table; }
+.cfx:after { clear: both; }
+.cfx { zoom: 1; }
+.blue{color:#124a97!important;}
+.red{color:#d30505!important;}
+.green{color:#1e8632!important;}
+.bold{font-weight: bold;}
+.a-left{text-align: left;}
+.a-center{text-align: center;}
+.a-right{text-align: right;}
+.bor_none{border-right:none;}
+.bol_none{border-left:none;}
+.bot_none{border-top:none;}
+.bob_none{border-bottom: none;}
+
+/*内容*/
+.headimg{height: 3rem;width: 3rem;margin: 3rem auto 0;border-radius: 3rem;}
+.headimg img{height: 3rem;width: 3rem;}
+.weltext{font-size: 0.6rem;text-align: center;line-height: 2rem;}
+.entry{width: 14rem;padding: 0.5rem 1rem 0;}
+.input_box{border-bottom: 1px solid #ccc;}
+.input_box input{background: none;border: none;height: 2rem;width: 13rem;font-size: 0.5rem;}
+.input_box span{height: 1rem;width: 1rem;display: inline-block;vertical-align: -0.2rem;}
+.span_del{background: url(../images/icon_del.png) 0.1rem 0.2rem no-repeat;background-size: 0.7rem;}
+.span_h{background: url(../images/icon_hide.png) 0.1rem 0.6rem no-repeat;background-size: 0.7rem;}
+.span_s{background: url(../images/icon_show.png) 0.1rem 0.5rem no-repeat;background-size: 0.7rem;	}
+.amlogin{font-size: 0.5rem;color: #999;padding-top: 0.5rem;height: 0.7rem;line-height: 0.7rem;}
+.span_tick{height: 0.5rem;width: 0.5rem;vertical-align: -0.1rem;display: inline-block;border: 1px solid #ccc;border-radius: 0.1rem;margin-right: 0.14rem;}
+.span_check{background: url(../images/icon_tick.png) 0.06rem 0.1rem no-repeat;background-size: 0.4rem;}
+.login{height: 2rem;border-radius: 2rem;background: #1b2b45;color: #fff;line-height: 2rem;text-align: center;font-size: 1rem;margin-top: 1.8rem;opacity: 0.8;}
+/**/
+.content{padding: 0 0.5rem;}
+.timebox{text-align: center;padding-top: 0.2rem;}
+.time{padding: 0.17rem 0.25rem;background: #d9d9d9;color: #000;opacity: 0.8;font-size: 0.5rem;border-radius: 0.21rem;}
+.dialog{overflow: hidden;padding: 0.4rem 0;}
+.dia_img{float: left;padding-right: 0.5rem;}
+.dia_img img{height: 1.8rem;width: 1.8rem;}
+.dia_right{float: left;position: relative;}
+.dia_right .dia_name{font-size: 0.6rem;color: #737373;padding-bottom: 0.22rem;height: 0.6rem;line-height: 0.6rem;}
+.dia_right .talk{font-size: 0.68rem;color: #000;max-width: 10rem;padding: 0.4rem 0.35rem;border: 1px solid #ddd;border-radius: 0.2rem;background: #fff;}
+.dia_right .talk img{width: 6rem;border-radius: 0.2rem;display:block}
+.arrow{background: #fff;height: 0.2rem;width: 0.2rem;position: absolute;top: 1.3rem;left: -0.11rem;border: 1px solid #ddd;transform:rotate(45deg);border-top-color: #fff;border-right-color: #fff;}
+.alert_img{display: block;width: 16rem;}

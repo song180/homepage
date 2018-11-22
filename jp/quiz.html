@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script src="js/comm.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="http://live.stockstar.com/Content/js/layer/layer.js"></script>
+</head>
+<body style="background: #f5f5f5;">
+	<div class="content">
+		<div class="timebox">
+			<span class="time">昨天 上午9:42</span>
+		</div>
+		<div class="dialog">
+			<div class="dia_img"><img src="images/headimg2.png" alt=""></div>
+			<div class="dia_right">
+				<div class="arrow"></div>
+				<div class="dia_name">量化因子</div>
+				<div class="talk">盘面指数</div>
+			</div>
+		</div>
+		<div class="timebox">
+			<span class="time">上午9:30</span>
+		</div>
+		<div class="dialog">
+			<div class="dia_img"><img src="images/headimg2.png" alt=""></div>
+			<div class="dia_right">
+				<div class="arrow"></div>
+				<div class="dia_name">Alpha 诊断</div>
+				<div class="talk">同时注意一下盘面，指数在调的时候什么板块走的强。同时注意一下盘面，指数在调的时候什么板块走的强。同时注意一下盘面，指数在调的时候强。</div>
+			</div>
+		</div>
+		<div class="dialog">
+			<div class="dia_img"><img src="images/headimg2.png" alt=""></div>
+			<div class="dia_right">
+				<div class="arrow"></div>
+				<div class="dia_name">Alpha VIP投顾</div>
+				<div class="talk">OK。稀土起了，看成交还不错。</div>
+			</div>
+		</div>
+		<div class="dialog">
+			<div class="dia_img"><img src="images/headimg2.png" alt=""></div>
+			<div class="dia_right">
+				<div class="arrow"></div>
+				<div class="dia_name">Alpha 诊断</div>
+				<div class="talk" style="padding: 0.2rem;"><img class="show_img" src="http://gbres.dfcfw.com/Files/picture/20181027/45CFDF18A401B77C64CDDFF59F6E1A6A.jpg" alt=""></div>
+			</div>
+		</div>
+		<div class="dialog">
+			<div class="dia_img"><img src="images/headimg2.png" alt=""></div>
+			<div class="dia_right">
+				<div class="arrow"></div>
+				<div class="dia_name">Alpha 诊断</div>
+				<div class="talk" style="padding: 0.2rem;"><img class="show_img" src="http://img3.imgtn.bdimg.com/it/u=337460218,1386144557&fm=26&gp=0.jpgg" alt=""></div>
+			</div>
+		</div>
+	</div>
+	<!-- 图片弹出 -->
+	<img src="" alt="" class="alert_img">
+	<script>
+		$('.show_img').click(function(event){
+			var i=$(this).attr('src');
+			$('.alert_img').attr('src',i);
+			event.stopPropagation();
+			layer.open({
+		            title: false,
+		            type: 1,
+		            area: ['16rem', ''],
+		            closeBtn: false,
+		            shade: 1,
+		           	content:$('.alert_img'),
+		            success: function(layero, index){
+		               $('body').data('closeBtn', index);
+		            }
+		        });
+			    $('body').on('click', function(){
+			        var closeBtn = $(this).data('closeBtn')
+			        layer.close(closeBtn); 
+			    });
+			})
+
+	</script>
+</body>
+</html>

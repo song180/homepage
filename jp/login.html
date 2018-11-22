@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script src="js/comm.js"></script>
+<script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div class="headimg">
+	<img src="images/headimg1.png" alt="">
+</div>
+<div class="weltext">欢迎回到金牌大户室</div>
+<div class="entry">
+	<div class="input_box">
+		<input type="text" placeholder="请输入账号" class="account"><span class="span_del"></span>
+	</div>
+	<div class="input_box">
+		<input type="password" placeholder="请输入密码" class="password"><span class="control span_h"></span>
+	</div>
+	<div class="amlogin"><span class="span_tick span_check"></span><span>下次自动登录</span></div>
+	<div class="login">登录</div>
+</div>
+
+<script>
+	$('.span_del').click(function(){
+		$('.account').val('');
+	});
+	$('.control').click(function(){
+		if($(this).hasClass('span_s')){
+			$(this).removeClass('span_s');
+			$(".password").attr('type','password');
+		}else{
+			$(this).addClass('span_s');
+			$(".password").attr('type','text');
+		}
+	});
+	$('.amlogin span').click(function(){
+		if($('.span_tick').hasClass('span_check')){
+			$('.span_tick').removeClass('span_check');
+		}else{
+			$('.span_tick').addClass('span_check');
+		}
+	});
+	$('.password').bind('input',function(){
+		if($('.account').val().length>0){
+			$('.login').css('opacity','1')
+		}
+	});
+	
+</script>
+</body>
+</html>
